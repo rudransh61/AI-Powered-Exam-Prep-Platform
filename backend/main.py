@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "AIzaSyDosgmLTwvVZvwyfmxTcywugMHzp5BP2f4"
+API_KEY = os.getenv('GOOGLE_GENAI_API_KEY')
 
 def generate_schedule(data):
     try:
