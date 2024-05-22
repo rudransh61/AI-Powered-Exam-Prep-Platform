@@ -22,10 +22,14 @@ def generate_schedule(data):
         Here is the list of subjects and their major topics and completion status:
         {data['subjects_info']}.
         My expected score is {data['expected_score']}.
-        Can I achieve this score?
+        But my previous performance was {data['previous_performance']}.
+        Can I achieve this score?(please answer with yes or no with some details , answer wisely whether you demotivate me or not)
+        What is my statistically chances to achieve this score (in percentage)?
         Please generate a personalized study schedule for me.
+        Guide like a professional time management app.
+        You can also check some resources online , review some books also , then guide and make schedule clear and step by step. : 
         """
-        
+        # print(data)
         genai.configure(api_key=API_KEY)
         model = genai.GenerativeModel('gemini-pro')
         chat = model.start_chat()
@@ -37,7 +41,7 @@ def generate_schedule(data):
 @app.route('/api/generate_schedule', methods=['POST'])
 def generate_schedule_endpoint():
     data = request.json
-    required_fields = ['grade', 'days_left', 'datesheet', 'fav_subjects', 'hate_subjects', 'study_hours', 'subjects_info', 'expected_score']
+    required_fields = ['grade', 'days_left', 'datesheet', 'fav_subjects', 'hate_subjects', 'study_hours', 'subjects_info', 'expected_score','previous_performance']
     
     for field in required_fields:
         if field not in data:

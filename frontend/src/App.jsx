@@ -20,7 +20,8 @@ function App() {
     datesheet: [],
     fav_subjects: [],
     hate_subjects: [],
-    subjects_info: []
+    subjects_info: [],
+    previous_performance:'',
   });
   const [schedule, setSchedule] = useState('');
   const [inputValue, setInputValue] = useState('');
@@ -84,6 +85,10 @@ function App() {
           <input type="text" name="grade" value={formData.grade} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" />
         </div>
         <div className="mb-4">
+          <label className="block mb-2">Email:</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" />
+        </div>
+        <div className="mb-4">
           <label className="block mb-2">Days Left Until Exam:</label>
           <input type="text" name="days_left" value={formData.days_left} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" />
         </div>
@@ -94,6 +99,10 @@ function App() {
         <div className="mb-4">
           <label className="block mb-2">Expected Score:</label>
           <input type="text" name="expected_score" value={formData.expected_score} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Previous Performance:</label>
+          <input type="text" name="previous_performance" value={formData.previous_performance} onChange={handleChange} className="border rounded-md px-4 py-2 w-full" />
         </div>
         {/* Datesheet */}
         <div className="mb-4">
