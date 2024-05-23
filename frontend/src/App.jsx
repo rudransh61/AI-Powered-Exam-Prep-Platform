@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -62,7 +61,7 @@ function App() {
   const handleAddSubjectInfo = () => {
     setFormData({
       ...formData,
-      subjects_info: [...formData.subjects_info, { subject: '', topics: '', completion: '' }]
+      subjects_info: [...formData.subjects_info, { subject: '', topics: '', completion: '', difficulty: '' }]
     });
   };
 
@@ -173,8 +172,10 @@ function App() {
               <input type="text" name="subject" value={subject.subject} onChange={(e) => handleSubjectInfoChange(index, e)} className="border rounded-md px-4 py-2 w-full" />
               <label className="block mb-2">Topics:</label>
               <input type="text" name="topics" value={subject.topics} onChange={(e) => handleSubjectInfoChange(index, e)} className="border rounded-md px-4 py-2 w-full" />
-              <label className="block mb-2">Completion:</label>
+              <label className="block mb-2">Completion(1-100):</label>
               <input type="text" name="completion" value={subject.completion} onChange={(e) => handleSubjectInfoChange(index, e)} className="border rounded-md px-4 py-2 w-full" />
+              <label className="block mb-2">Difficulty (1-10):</label>
+              <input type="text" name="difficulty" value={subject.difficulty} onChange={(e) => handleSubjectInfoChange(index, e)} className="border rounded-md px-4 py-2 w-full" />
             </div>
           ))}
           <button type="button" onClick={handleAddSubjectInfo} className="bg-blue-500 text-white px-4 py-2 rounded-md">Add Subject Info</button>
@@ -188,7 +189,6 @@ function App() {
         </div>
       )}
     </div>
-
   );
 }
 
