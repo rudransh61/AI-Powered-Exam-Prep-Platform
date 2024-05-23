@@ -26,6 +26,7 @@ def generate_schedule(data):
         Can I achieve this score?(please answer with yes or no with some details , answer wisely whether you demotivate me or not)
         What is my statistically chances to achieve this score (in percentage)?
         Please generate a personalized study schedule for me.
+        Help me try to achieve better score if possible . Also make sure the time is alloted in schedule on the basis of the difficulty level of the topic.
         Guide like a professional time management app.
         You can also check some resources online , review some books also , then guide and make schedule clear and step by step. : 
         """
