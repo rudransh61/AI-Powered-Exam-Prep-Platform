@@ -87,7 +87,7 @@ cd ai-powered-exam-prep
    c. Start the React development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
 ### How to Get Your Google Generative AI API Key
